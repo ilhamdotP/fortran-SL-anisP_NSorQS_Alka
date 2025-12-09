@@ -1,0 +1,1 @@
+gnuplot plotSNM.gnu plotPNM.gnu

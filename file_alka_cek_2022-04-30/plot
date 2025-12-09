@@ -1,0 +1,47 @@
+set multiplot
+set origin 0, 0
+set size 1, 1
+set ylabel 'P(MeV/fm^3)'
+set xlabel '{/Symbol e}(MeV/fm^3)'
+unset grid
+
+set key t l vertical Left reverse enhanced autotitle nobox font ",9"
+
+
+plot [0:1800][0:800] 'EOS_FSU2HZ2_GUP0.E+00_cek' u 3:4 w l lc 'black' lw 2 t '{/Symbol b} = 0',\
+'EOS_FSU2HZ2_GUP1.E-09_cek' u 3:4 w l lc 'red' lw 2 t '{/Symbol b} = 10^{-9}' ,\
+'EOS_FSU2HZ2_GUP1.E-08_cek' u 3:4 w l lc 'green' lw 2 t '{/Symbol b} = 10^{-8}' ,\
+'EOS_FSU2HZ2_GUP1.E-07_cek' u 3:4 w l lc 'blue' lw 2 t '{/Symbol b} = 10^{-7}' ,\
+'EOS_FSU2HZ2_GUP0.E+00_cek' u 3:5 w l lc 'black' dt 2 lw 2 notitle,\
+'EOS_FSU2HZ2_GUP1.E-09_cek' u 3:5 w l lc 'red' dt 2 lw 2 notitle,\
+'EOS_FSU2HZ2_GUP1.E-08_cek' u 3:5 w l lc 'green' dt 2 lw 2 notitle,\
+'EOS_FSU2HZ2_GUP1.E-07_cek' u 3:5 w l lc 'blue' dt 2 lw 2 notitle,\
+'EOS_FSU2HZ2_GUP0.E+00_cek' u 3:6 w l lc 'black' dt 3 lw 2 notitle,\
+'EOS_FSU2HZ2_GUP1.E-09_cek' u 3:6 w l lc 'red' dt 3 lw 2 notitle,\
+'EOS_FSU2HZ2_GUP1.E-08_cek' u 3:6 w l lc 'green' dt 3 lw 2 notitle,\
+'EOS_FSU2HZ2_GUP1.E-07_cek' u 3:6 w l lc 'blue' dt 3 lw 2 notitle,\
+-100000000 dt 1 lw 2 lc rgb 'black' t 'P',\
+-100000000 dt 2 lw 2 lc rgb 'black' t 'P_r',\
+-100000000 dt 3 lw 2 lc rgb 'black' t 'P_t' #dummyplot
+
+set origin 0.45, 0.2
+set size 0.5, 0.6
+unset key
+unset xlabel
+unset ylabel
+set grid
+
+plot [0:150][-0.5:1.5] 'EOS_FSU2HZ2_GUP0.E+00_cek' u 3:4 w l lc 'black' lw 1 t '{/Symbol b} = 0',\
+'EOS_FSU2HZ2_GUP1.E-09_cek' u 3:4 w l lc 'red' lw 1 t '{/Symbol b} = 10^{-9}' ,\
+'EOS_FSU2HZ2_GUP1.E-08_cek' u 3:4 w l lc 'green' lw 1 t '{/Symbol b} = 10^{-8}' ,\
+'EOS_FSU2HZ2_GUP1.E-07_cek' u 3:4 w l lc 'blue' lw 1 t '{/Symbol b} = 10^{-7}' ,\
+'EOS_FSU2HZ2_GUP0.E+00_cek' u 3:5 w l lc 'black' dt 2 lw 1 t '{/Symbol b} = 0',\
+'EOS_FSU2HZ2_GUP1.E-09_cek' u 3:5 w l lc 'red' dt 2 lw 1 t '{/Symbol b} = 10^{-9}' ,\
+'EOS_FSU2HZ2_GUP1.E-08_cek' u 3:5 w l lc 'green' dt 2 lw 1 t '{/Symbol b} = 10^{-8}',\
+'EOS_FSU2HZ2_GUP1.E-07_cek' u 3:5 w l lc 'blue' dt 2 lw 1 t '{/Symbol b} = 10^{-7}',\
+'EOS_FSU2HZ2_GUP0.E+00_cek' u 3:6 w l lc 'black' dt 3 lw 1 t '{/Symbol b} = 0',\
+'EOS_FSU2HZ2_GUP1.E-09_cek' u 3:6 w l lc 'red' dt 3 lw 1 t '{/Symbol b} = 10^{-9}' ,\
+'EOS_FSU2HZ2_GUP1.E-08_cek' u 3:6 w l lc 'green' dt 3 lw 1 t '{/Symbol b} = 10^{-8}',\
+'EOS_FSU2HZ2_GUP1.E-07_cek' u 3:6 w l lc 'blue' dt 3 lw 1 t '{/Symbol b} = 10^{-7}'
+
+unset multiplot
