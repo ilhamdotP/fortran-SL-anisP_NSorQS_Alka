@@ -1,0 +1,95 @@
+size 12 20                              !Sets the size of the paper
+
+set texlabels 1
+
+amove 0.5 10.5
+begin graph
+        size 12 10                      !Sets the size of the graph
+        data "GUPbeta0E0/radmass_CT=.100D+05.dat"       d10=c3,c4 
+		data "GUPbeta1E-7/radmass_CT=.100D+05.dat"       d20=c3,c4 
+        data "GUPbeta1E-8/radmass_CT=.100D+05.dat"       d30=c3,c4 
+		data "GUPbeta1E-9/radmass_CT=.100D+05.dat"       d40=c3,c4 
+		data "TOVGR/radmass-TOViso.dat"       d50=c3,c4 
+!		data "radmass_CT=.100D-12.dat"       d60=c3,c4 
+		yaxis min 0 max 3 dticks 1 hei .5
+		xaxis min 2 max 15 dticks 3 hei .5
+        ytitle "$M (M_{\odot})$"  hei .5
+		xtitle "$R ($km$)$" hei .5
+		d10 line lstyle 1 lwidth 0.06 color black
+		d20 line lstyle 2 lwidth 0.06 color blue
+        d30 line lstyle 3 lwidth 0.06 color red
+        d40 line lstyle 4 lwidth 0.06 color green
+        d50 line lstyle 5 lwidth 0.06 color grey30
+!        d60 line lstyle 6 lwidth 0.06 color grey60
+		!key pos tl hei 0.4
+end graph 
+!marker circle msize 0.2 
+
+begin key
+position tl
+hei .4
+ nobox
+line lstyle 1 lwidth 0.06 color black text "$\beta=0$"
+line lstyle 2 lwidth 0.06 color blue  text "$\beta=10^{-7}$"
+line lstyle 3 lwidth 0.06 color red   text "$\beta=10^{-8}$"
+line lstyle 4 lwidth 0.06 color green text "$\beta=10^{-9}$"
+line lstyle 5 lwidth 0.06 color grey30  text "TOV GR iso"
+!line lstyle 6 lwidth 0.06 color grey60  text "$Y=0, \tilde{c}=10^{6} $m$^2$"
+end key
+
+begin key
+position tr
+ hei .4
+nobox
+! text "$\sigma=Y(2Gm/r)P$"
+text "$\tilde{c}=10^{4} $m$^2$"
+end key
+
+begin key
+position bl
+ hei .4
+nobox
+text "(a)"
+end key
+
+
+!!!===============================================================
+
+
+amove 0.5 0.5
+begin graph
+        size 12 10                      !Sets the size of the graph
+        data "GUPbeta0E0/radmass_CT=.100D+08.dat"       d10=c3,c4 
+		data "GUPbeta1E-7/radmass_CT=.100D+08.dat"       d20=c3,c4 
+        data "GUPbeta1E-8/radmass_CT=.100D+08.dat"       d30=c3,c4 
+		data "GUPbeta1E-9/radmass_CT=.100D+08.dat"       d40=c3,c4 
+		data "TOVGR/radmass-TOViso.dat"       d50=c3,c4 
+!		data "radmass_CT=.100D-12.dat"       d60=c3,c4 
+		yaxis min 0 max 3 dticks 1 hei .5
+		xaxis min 2 max 15 dticks 3 hei .5
+        ytitle "$M (M_{\odot})$"  hei .5
+		xtitle "$R ($km$)$" hei .5
+		d10 line lstyle 1 lwidth 0.06 color black
+		d20 line lstyle 2 lwidth 0.06 color blue
+        d30 line lstyle 3 lwidth 0.06 color red
+        d40 line lstyle 4 lwidth 0.06 color green
+        d50 line lstyle 5 lwidth 0.06 color grey30
+!        d60 line lstyle 6 lwidth 0.06 color grey60
+		!key pos tl hei 0.4
+end graph 
+!marker circle msize 0.2 
+
+begin key
+position tr
+ hei .4
+nobox
+! text "$\sigma=Y(2Gm/r)P$"
+text "$\tilde{c}=10^{7} $m$^2$"
+end key
+
+begin key
+position bl
+ hei .4
+nobox
+text "(b)"
+end key
